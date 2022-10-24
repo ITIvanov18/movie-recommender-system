@@ -1,14 +1,22 @@
+
 package io.datajek.spring.basics.movierecommendersystem.lesson1;
 
-public class RecommenderImplementation {
-    public String[] recommendMovies (String movie){
+import io.datajek.spring.basics.movierecommendersystem.lesson2.Filter;
 
-        //user content based filter to find similar movies
-        ContentBasedFilter filter = new ContentBasedFilter();
+import java.util.logging.Filter;
+
+public class RecommenderImplementation {
+
+    //use filter interface to select filter
+    private Filter filter;
+
+    public RecommenderImplementation(ContentBasedFilter filter) {        super();        this.filter = filter;    }
+
+    //use a filter to find recommendations
+    public String[] recommendMovies(String movies) {        System.out.println("Name of the filter in use: " + filter + "\n");
+
         String[] results = filter.getRecommendations("Finding Dory");
 
-        //return new String[] {"M1", "M2", "M3"};
-        return results;
-
-    }
+        return results;    }
 }
+
