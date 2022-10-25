@@ -1,12 +1,13 @@
 
 package io.datajek.spring.basics.movierecommendersystem.lesson1;
-
 import io.datajek.spring.basics.movierecommendersystem.lesson2.Filter;
-
 import java.util.logging.Filter;
 
-public class RecommenderImplementation {
 
+@Component
+public class RecommenderImplementation {
+    
+    @Autowired
     //use filter interface to select filter
     private Filter filter;
 
